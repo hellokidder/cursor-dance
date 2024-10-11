@@ -1,0 +1,75 @@
+{
+  "name": "cursor-dance",
+  "displayName": "Cursor Dance",
+  "description": "use shortcuts to operate the cursor",
+  "icon": "icon.png",
+  "version": "0.0.2",
+  "publisher": "hellokidder",
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:hellokidder/cursor-dance.git"
+  },
+  "engines": {
+    "vscode": "^1.94.0"
+  },
+  "categories": [
+    "Other"
+  ],
+  "activationEvents": [],
+  "main": "./extension.js",
+  "contributes": {
+    "commands": [
+      {
+        "command": "cursor-dance.SwapSelectionCursor",
+        "title": "Swap Cursor Position in Selection"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToCenter",
+        "title": "Move Cursor Line to Center"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToTop",
+        "title": "Move Cursor Line to Top"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToBottom",
+        "title": "Move Cursor Line to Bottom"
+      }
+    ],
+    "keybindings": [
+      {
+        "command": "cursor-dance.SwapSelectionCursor",
+        "key": "ctrl+shift+o",
+        "when": "editorTextFocus && editorHasSelection"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToCenter",
+        "key": "ctrl+shift+c c",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToTop",
+        "key": "ctrl+shift+c t",
+        "when": "editorTextFocus"
+      },
+      {
+        "command": "cursor-dance.MoveCursorLineToBottom",
+        "key": "ctrl+shift+c b",
+        "when": "editorTextFocus"
+      }
+    ]
+  },
+  "scripts": {
+    "lint": "eslint .",
+    "pretest": "npm run lint",
+    "test": "vscode-test"
+  },
+  "devDependencies": {
+    "@types/vscode": "^1.94.0",
+    "@types/mocha": "^10.0.8",
+    "@types/node": "20.x",
+    "eslint": "^9.11.1",
+    "@vscode/test-cli": "^0.0.10",
+    "@vscode/test-electron": "^2.4.1"
+  }
+}
